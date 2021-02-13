@@ -23,10 +23,10 @@ function [configSoln] = CartesianMover6(X,Y,Z,A,B,C)
     M3 = [1.0, 0.0, 0.0, 0.0; 0.0,  cc, -sc, 0.0; 0.0,  sc,  cc, 0.0; 0.0, 0.0, 0.0, 1.0];
     M4 = [cb , 0.0,  sb, 0.0; 0.0, 1.0, 0.0, 0.0; -sb, 0.0,  cb, 0.0; 0.0, 0.0, 0.0, 1.0];
     tform = M1*M2*M3*M4;
-    ik=inverseKinematics('RigidBodyTree', mover6)
+    ik=inverseKinematics('RigidBodyTree', mover6);
     weights=[0.25 0.25 0.25 1 1 1];
     initialguess=mover6.homeConfiguration;
-    [configSoln,solnInfo]=ik('link6',tform,weights,initialguess)
-    show(mover6, configSoln)
+    [configSoln,~]=ik('link6',tform,weights,initialguess);
+    show(mover6, configSoln);
 end
 
