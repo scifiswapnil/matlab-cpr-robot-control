@@ -104,3 +104,10 @@ add_executable(GoalMovementMover6
   src/GoalMovementMover6.cpp) 
 target_link_libraries(GoalMovementMover6 ${catkin_LIBRARIES})
 
+add_executable(goalmover src/goalmover.cpp) 
+target_link_libraries(goalmover ${catkin_LIBRARIES})
+
+add_executable(goalmoverPID src/goalmoverPID.cpp) 
+target_link_libraries(goalmoverPID ${catkin_LIBRARIES})
+
+
